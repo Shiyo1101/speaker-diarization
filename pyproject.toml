@@ -1,7 +1,7 @@
 [project]
-name = "default"
+name = "speaker-diarization-api"
 version = "0.1.0"
-description = "This repository contains configurations to set up a Python development environment using VSCode's Dev Container feature. The environment includes uv and Ruff."
+description = "A FastAPI API for speaker diarization using AWS Transcribe."
 
 requires-python = ">=3.9"
 
@@ -16,7 +16,7 @@ dev-dependencies = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["tools"]
+packages = ["src/app", "src/infra"]
 
 [build-system]
 requires = ["hatchling"]
