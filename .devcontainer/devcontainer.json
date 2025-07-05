@@ -9,8 +9,15 @@
     }
   },
   "features": {
-    "ghcr.io/dhoeric/features/hadolint:1": {}
+    "ghcr.io/dhoeric/features/hadolint:1": {},
+    // aws-cliのインストール
+    "ghcr.io/devcontainers/features/aws-cli:1": {}
   },
+  // ローカル環境のAWS CLI認証情報をコンテナにマウント
+  // コンテナ内で、`aws configure`を実行する場合は不要
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.aws,target=/home/vscode/.aws,type=bind,consistency=cached"
+  ],
   "customizations": {
     "vscode": {
       "extensions": [
