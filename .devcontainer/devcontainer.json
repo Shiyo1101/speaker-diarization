@@ -18,11 +18,14 @@
         "exiasr.hadolint",
         "kevinrose.vsc-python-indent",
         "mosapride.zenkaku",
+        "mhutchie.git-graph",
         "ms-azuretools.vscode-docker",
         "ms-python.python",
         "ms-python.vscode-pylance",
         "njpwerner.autodocstring",
-        "shardulm94.trailing-spaces"
+        "shardulm94.trailing-spaces",
+        "seatonjiang.gitmoji-vscode",
+        "tamasfe.even-better-toml"
       ]
     }
   },

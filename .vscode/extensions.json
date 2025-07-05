@@ -12,6 +12,7 @@
         "ms-python.vscode-pylance",
         "ms-vscode-remote.remote-containers",
         "njpwerner.autodocstring",
+        "tamasfe.even-better-toml",
         "pkief.material-icon-theme",
         "shardulm94.trailing-spaces",
         "usernamehw.errorlens",
