@@ -33,5 +33,5 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.envs.default.scripts]
-build-server = "docker build -t fastapi-app -f src/app/Dockerfile ."
+build-server = "docker build --build-arg HUGGING_FACE_TOKEN=$(grep -v '^#' .env | grep HUGGING_FACE_TOKEN | cut -d '=' -f2) -t fastapi-app -f src/app/Dockerfile ."
 run-server = "docker stop fastapi-container || true && docker rm fastapi-container || true && docker run -p 8000:80 --name fastapi-container fastapi-app"

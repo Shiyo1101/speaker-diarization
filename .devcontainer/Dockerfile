@@ -11,6 +11,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:$DEBIAN_VERSION
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     libgl1 libglib2.0-0 \
+    cmake pkg-config \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
