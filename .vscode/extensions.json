@@ -13,6 +13,7 @@
         "ms-vscode-remote.remote-containers",
         "njpwerner.autodocstring",
         "tamasfe.even-better-toml",
+        "redhat.vscode-yaml",
         "pkief.material-icon-theme",
         "shardulm94.trailing-spaces",
         "usernamehw.errorlens",
