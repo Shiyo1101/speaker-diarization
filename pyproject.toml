@@ -7,10 +7,13 @@ requires-python = ">=3.9"
 
 dependencies = [
     "boto3>=1.39.3",
+    "fastapi>=0.115.14",
+    "uvicorn>=0.35.0",
 ]
 
 [tool.uv]
 dev-dependencies = [
+    "hatch>=1.14.1",
     "pre-commit>=4.1.0",
     "ruff>=0.9.2",
 ]
@@ -21,3 +24,7 @@ packages = ["src/app", "src/infra"]
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.hatch.envs.default.scripts]
+build-server = "docker build -t fastapi-app -f src/app/Dockerfile ."
+run-server = "docker stop my-fastapi-container || true && docker rm my-fastapi-container || true && docker run -p 8000:80 --name my-fastapi-container fastapi-app"
