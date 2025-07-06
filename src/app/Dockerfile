@@ -15,7 +15,7 @@ COPY pyproject.toml ./
 RUN uv venv /opt/venv && \
     uv pip install --no-cache-dir -p /opt/venv/bin/python -r pyproject.toml
 
-COPY src/ ./src/app
+COPY src/app ./src/app
 COPY src/app/entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 
