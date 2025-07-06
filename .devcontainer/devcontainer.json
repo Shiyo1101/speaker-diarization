@@ -11,7 +11,11 @@
   "features": {
     "ghcr.io/dhoeric/features/hadolint:1": {},
     // aws-cliのインストール
-    "ghcr.io/devcontainers/features/aws-cli:1": {}
+    "ghcr.io/devcontainers/features/aws-cli:1": {},
+    // コンテナ内でDockerを使用するための設定
+    "docker-from-docker": {
+      "version": "latest"
+    }
   },
   // ローカル環境のAWS CLI認証情報をコンテナにマウント
   // コンテナ内で、`aws configure`を実行する場合は不要
