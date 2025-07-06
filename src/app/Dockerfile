@@ -19,9 +19,6 @@ COPY src/app ./src/app
 COPY src/app/entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 
-ARG HUGGING_FACE_TOKEN
-ENV HUGGING_FACE_TOKEN=${HUGGING_FACE_TOKEN}
-
 
 ENV PATH="/opt/venv/bin:$PATH"
 

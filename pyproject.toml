@@ -7,9 +7,9 @@ requires-python = ">=3.9"
 
 dependencies = [
     "aiofiles>=24.1.0",
+    "boto3>=1.39.3",
     "fastapi>=0.115.14",
-    "faster-whisper>=1.1.1",
-    "pandas>=2.3.0",
+    "httpx>=0.28.1",
     "pyannote-audio>=3.3.2",
     "pydantic>=2.11.7",
     "pydantic-settings>=2.10.1",
@@ -33,5 +33,5 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.envs.default.scripts]
-build-server = "docker build --build-arg HUGGING_FACE_TOKEN=$(grep -v '^#' .env | grep HUGGING_FACE_TOKEN | cut -d '=' -f2) -t fastapi-app -f src/app/Dockerfile ."
-run-server = "docker stop fastapi-container || true && docker rm fastapi-container || true && docker run -p 8000:80 --name fastapi-container fastapi-app"
+build-server = "docker build -t fastapi-app -f src/app/Dockerfile ."
+run-server = "docker stop fastapi-container || true && docker rm fastapi-container || true && docker run --env-file .env -p 8000:80 --name fastapi-container fastapi-app"
