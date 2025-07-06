@@ -4,7 +4,7 @@ from src.app.routers import diarization
 
 app = FastAPI(
     title="Speaker Diarization API",
-    description="Whisperとpyannoteを使用した話者分類と文字起こしAPI",
+    description="pyannote-audioとAWS Transcribeを使用した話者分類と文字起こしAPI",
     version="1.0.0",
 )
 

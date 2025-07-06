@@ -1,7 +1,7 @@
 [project]
 name = "speaker-diarization-api"
 version = "0.1.0"
-description = "A FastAPI API for speaker diarization using AWS Transcribe."
+description = "A FastAPI API for speaker diarization using AWS Transcribe, pyannote-audio."
 
 requires-python = ">=3.9"
 
