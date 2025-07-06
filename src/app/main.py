@@ -1,16 +1,17 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+from src.app.routers import diarization
+
+app = FastAPI(
+    title="Speaker Diarization API",
+    description="Whisperとpyannoteを使用した話者分類と文字起こしAPI",
+    version="1.0.0",
+)
+
+app.include_router(diarization.router, prefix="/api/v1")
 
 
-@app.get("/")
+@app.get("/", tags=["Root"])
 async def read_root() -> dict:
-    """Root endpoint returning a welcome message.
-
-    Returns
-    -------
-    dict
-        A dictionary with a welcome message.
-
-    """
-    return {"message": "Hello, World!"}
+    """ルートエンドポイントのハンドラー."""
+    return {"message": "Welcome to the Speaker Diarization API!"}

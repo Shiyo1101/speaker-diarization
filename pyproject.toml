@@ -6,9 +6,14 @@ description = "A FastAPI API for speaker diarization using AWS Transcribe."
 requires-python = ">=3.9"
 
 dependencies = [
-    "boto3>=1.39.3",
+    "aiofiles>=24.1.0",
     "fastapi>=0.115.14",
+    "faster-whisper>=1.1.1",
+    "pandas>=2.3.0",
     "pyannote-audio>=3.3.2",
+    "pydantic>=2.11.7",
+    "pydantic-settings>=2.10.1",
+    "pydub>=0.25.1",
     "python-multipart>=0.0.20",
     "uvicorn>=0.35.0",
 ]
@@ -29,4 +34,4 @@ build-backend = "hatchling.build"
 
 [tool.hatch.envs.default.scripts]
 build-server = "docker build -t fastapi-app -f src/app/Dockerfile ."
-run-server = "docker stop my-fastapi-container || true && docker rm my-fastapi-container || true && docker run -p 8000:80 --name my-fastapi-container fastapi-app"
+run-server = "docker stop fastapi-container || true && docker rm fastapi-container || true && docker run -p 8000:80 --name fastapi-container fastapi-app"
