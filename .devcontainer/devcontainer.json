@@ -9,6 +9,16 @@
     }
   },
   "features": {
+    // pyannote.audio用
+    "ghcr.io/devcontainers/features/common-utils": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true,
+      "upgradePackages": true,
+      "username": "vscode",
+      "userUid": 1000,
+      "userGid": 1000
+    },
     "ghcr.io/dhoeric/features/hadolint:1": {},
     // aws-cliのインストール
     "ghcr.io/devcontainers/features/aws-cli:1": {},

@@ -8,6 +8,8 @@ requires-python = ">=3.9"
 dependencies = [
     "boto3>=1.39.3",
     "fastapi>=0.115.14",
+    "pyannote-audio>=3.3.2",
+    "python-multipart>=0.0.20",
     "uvicorn>=0.35.0",
 ]
 
